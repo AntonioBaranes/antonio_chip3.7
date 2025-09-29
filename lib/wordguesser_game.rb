@@ -1,11 +1,8 @@
-
 class WordGuesserGame
   # add the necessary class methods, attributes, etc. here
   # to make the tests in spec/wordguesser_game_spec.rb pass.
 
-
   # Get a word from remote "random word" service
-
 
   attr_accessor :word, :guesses, :wrong_guesses
  
@@ -55,15 +52,12 @@ class WordGuesserGame
   end
 
 
-
-
   def check_win_or_lose
 
 
     if @guesses.length + @wrong_guesses.length >= 7
       return :lose
     end
-
 
     return_str = ''
     word.each_char do |chr|
@@ -74,14 +68,11 @@ class WordGuesserGame
       end
     end
 
-
     if return_str == word
       return :win
     end
 
-
     :play
-
 
   end
   # You can test it by installing irb via $ gem install irb
@@ -95,8 +86,5 @@ class WordGuesserGame
     Net::HTTP.start(uri.host, uri.port) do |http|
       return http.post(uri, "").body
     end
-  rescue
-    # fallback if the service is unreachable (Codio, Heroku, etc.)
-    return "fallback"
   end
 end  
