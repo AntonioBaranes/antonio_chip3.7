@@ -1,8 +1,6 @@
-<h1>You Win!</h1>
+<p>The word was <%= @game.word %></p>
 
-<div class="alert alert-success">
-  The word was
-  <span class="win"><%= @game.word %></span>.
-</div>
-
-<%= erb :new %>
+<form action="/create" method="post">
+  <h1>You Win!</h1>
+  <button type="submit">Play Again</button>
+</form>
